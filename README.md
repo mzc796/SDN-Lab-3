@@ -28,7 +28,12 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
    sudo mn --custom ~/lab-1/topo-2sw-2host.py --topo mytopo --switch ovsk,protocols=OpenFlow13 --controller remote,ip=127.0.0.1,port=6653
    ```
 3. Open the 3rd terminal to request nodes to verify the connection:
-   ``` 
+   ```
+   mkdir data
+   cd odl
+   sudo ./read_nodes.sh
+   ```
+   Read the file `data/nodes.json`. If it has statistics, the connection is successful.
 5. In the mininet terminal:
    ```
    h1 ping h2
