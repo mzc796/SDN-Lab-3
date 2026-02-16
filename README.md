@@ -34,9 +34,13 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
    sudo ./read_nodes.sh
    ```
    Read the file `data/nodes.json`. If it has statistics, the connection is successful.
-5. In the mininet terminal:
+4. In the mininet terminal:
    ```
    h1 ping h2
    ```
    Question: Was the `ping` successful? Why?
-4. 
+5. Use OpenDaylight Restconf API to configure ARP flow entries
+
+   (1) Refer to `odl/arp_odl.sh` to configure the ARP flow entries for each switch.
+   
+   NOTE: The format of dest IP address is `10.0.0.1/32`. Search what does `10.0.0.1/32` mean?
