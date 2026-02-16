@@ -34,13 +34,39 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
    sudo ./read_nodes.sh
    ```
    Read the file `data/nodes.json`. If it has statistics, the connection is successful.
-4. In the mininet terminal:
+   
+5. In the mininet terminal:
    ```
    h1 ping h2
    ```
    Question: Was the `ping` successful? Why?
-5. Use OpenDaylight Restconf API to configure ARP flow entries
+   
+6. Use OpenDaylight Restconf API to configure ARP flow entries
 
    (1) Refer to `odl/arp_odl.sh` to configure the ARP flow entries for each switch.
    
    NOTE: The format of dest IP address is `10.0.0.1/32`. Search what does `10.0.0.1/32` mean?
+
+   (2) Request the config data store on the OpenDaylight. On a terminal:
+   ```
+   cd odl
+   sudo ./read_config_flows.sh $SW_ID
+   vim data/$SW_ID_config_flows.json
+   ```
+   If the json file is not empty or has an error, the flow entry is configured successfully.
+
+   (3) Check the flow entry on the mininet. On a terminal:
+   ```
+   cd mn
+   sudo ./dump-flows.sh $SW_ID
+   ```
+
+   If the flow entry is indeed on the mininet switch, this configuration is successful.
+
+   (4) Finish the flow entries on both switches to enable complete ARP packet exchanges.
+
+   (5) On the mininet terminal, check arp table on both host, e.g.,
+   ```
+   h1 arp
+   ```
+   
