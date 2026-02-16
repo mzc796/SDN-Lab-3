@@ -30,7 +30,7 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
 3. Open the 3rd terminal to request nodes to verify the connection:
    ```
    mkdir data
-   cd odl
+   cd odl/
    sudo ./read_nodes.sh
    ```
    Read the file `data/nodes.json`. If it has statistics, the connection is successful.
@@ -49,7 +49,7 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
 
    (2) Request the config data store on the OpenDaylight. On a terminal:
    ```
-   cd odl
+   cd odl/
    sudo ./read_config_flows.sh $SW_ID
    vim data/$SW_ID_config_flows.json
    ```
@@ -57,7 +57,7 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
 
    (3) Check the flow entry on the mininet. On a terminal:
    ```
-   cd mn
+   cd mn/
    sudo ./dump-flows.sh $SW_ID
    ```
 
