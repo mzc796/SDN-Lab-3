@@ -35,13 +35,13 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
    ```
    Read the file `data/nodes.json`. If it has statistics, the connection is successful.
    
-5. In the mininet terminal:
+4. In the mininet terminal:
    ```
    h1 ping h2
    ```
    Question: Was the `ping` successful? Why?
    
-6. Use OpenDaylight Restconf API to configure ARP flow entries
+5. Use OpenDaylight Rest API to configure ARP flow entries
 
    (1) Refer to `odl/arp_odl.sh` to configure the ARP flow entries for each switch.
    
@@ -69,4 +69,5 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
    ```
    h1 arp
    ```
+6. Use OpenDaylight Rest API to configure ICMP flow entries
    
