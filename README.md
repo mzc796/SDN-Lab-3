@@ -69,5 +69,10 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
    ```
    h1 arp
    ```
+   Continue until `h1 arp` and `h2 arp` have complete arp tables.
+   
 6. Use OpenDaylight Rest API to configure ICMP flow entries
    
+   (1) Refer to `odl/icmp_odl.sh` to configure ICMP flow entries for each switch.
+
+   (2) Finish the flow entries on both switches to enable complete ICMP packet exchanges, until `h1 ping h2` is successful.
