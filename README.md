@@ -76,3 +76,11 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
    (1) Refer to `odl/icmp_odl.sh` to configure ICMP flow entries for each switch.
 
    (2) Finish the flow entries on both switches to enable complete ICMP packet exchanges, until `h1 ping h2` is successful.
+
+7. Understand the config and nonconfig data store.
+   
+   (1) Shut down OpenDaylight with `control + D`. Restart mininet and read flow entries on the mininet end. Keep in mind your observation.
+
+   (2) Restart OpenDaylight. Read flow entries on the mininet end.
+   
+   Question: What do you observe? Why?
