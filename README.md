@@ -53,7 +53,7 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
    sudo ./read_config_flows.sh $SW_ID
    vim data/$SW_ID_config_flows.json
    ```
-   If the json file is not empty or has an error, the flow entry is configured successfully.
+   If the json file has content as expected, the flow entry is configured successfully.
 
    (3) Check the flow entry on the mininet. On a terminal:
    ```
