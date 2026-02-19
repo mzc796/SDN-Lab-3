@@ -15,7 +15,7 @@ curl -u admin:admin -X PUT "http://127.0.0.1:8181/rests/data/opendaylight-invent
                  },
                  "ipv4-destination": "'$4'",
 		 "ip-match": {
-	 		"ip-protocol":1
+	 		"ip-protocol":17
 	 	  }
              },
              "cookie": 1,
