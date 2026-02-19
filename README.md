@@ -86,3 +86,13 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
    Question: What do you observe? Why?
 
 8. Practice flow entry setup with [examples](https://docs.opendaylight.org/projects/openflowplugin/en/latest/users/flow-examples.html)
+   (1) Install xterm:
+   ```
+   sudo apt install xterm
+   ```
+   (2) Open hosts' terminals. In the mininet terminal:
+   ```
+   h1 xterm
+   ```
+   You should see a black terminal coming out. That's the `h1`. Do the same thing for `h2`.
+   (3) Send IP packets from Host 1 to Host 2 with Scapy
