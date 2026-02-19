@@ -96,14 +96,59 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
    ```
    python3 -c "from scapy.all import *; print('Scapy OK')"
    ```
-   sudo ./run_mn.sh
-   ```
    (2) Write IPv4 sender and receiver in Python with Scapy
+   ```
+   vim sender.py
+   ```
+   Copy & paste the code into the `sender.py`:
+   ```
+   from scapy.all import *
+   import time
    
+   dst_ip = "10.0.0.2"   # h2 IP
+   src_ip = "10.0.0.1"   # h1 IP
    
+   print("Sending custom IPv4 packets to", dst_ip)
+   
+   for i in range(5):
+       pkt = IP(src=src_ip, dst=dst_ip) / UDP(sport=1234, dport=4321) / Raw(load=f"Message {i}")
+       send(pkt, verbose=False)
+       print("Sent packet", i)
+       time.sleep(1)
+   
+   print("Done.")
+   ```
+   ```
+   vim receiver.py
+   ```
+   Copy & paste the code into the `receiver.py`
+   ```
+   from scapy.all import *
+
+   print("Listening for IPv4 packets...")
+   
+   def handle(pkt):
+       if IP in pkt:
+           print("Received:", pkt.summary())
+           if Raw in pkt:
+               print("Payload:", pkt[Raw].load)
+   
+   sniff(filter="ip", prn=handle)
+   ```
    (3) Open hosts' terminals. In the mininet terminal:
    ```
    xterm h1 h2
    ```
    You should see two black terminals coming out. They are the `h1` and `h2`.
-   (2) Send IP packets from Host 1 to Host 2 with Scapy
+   (4) Send IP packets from Host 1 
+   In the `h1` terminal:
+   ```
+   sudo python3 sender.py
+   ```
+   (5) Let Host 2 listen to the incoming packets
+   In the `h2` terminal:
+   ```
+   sudo python3 receiver.py
+   ```
+   Question: Did the `h2` receive anything? Why? How do you verify whether `h1` has sent packets successfully?
+   (6) Make `h2` receive packets from `h1` successfully
