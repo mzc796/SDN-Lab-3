@@ -141,6 +141,7 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
    xterm h1 h2
    ```
    You should see two black terminals coming out. They are the `h1` and `h2`.
+   
    (4) Send IP packets from Host 1 
    In the `h1` terminal:
    ```
