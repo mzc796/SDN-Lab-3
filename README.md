@@ -124,17 +124,25 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
    ```
    Copy & paste the code into the `receiver.py`
    ```
-   from scapy.all import *
+   from scapy.all import sniff, conf, hexdump
 
-   print("Listening for IPv4 packets...")
+   IFACE = "h2-eth0"
    
    def handle(pkt):
-       if IP in pkt:
-           print("Received:", pkt.summary())
-           if Raw in pkt:
-               print("Payload:", pkt[Raw].load)
+       print("=== got packet ===")
+       print(pkt.summary())
+       try:
+           pkt.show()
+       except Exception as e:
+           print("show() failed:", e)
+       # Uncomment if you want raw bytes:
+       # hexdump(pkt)
    
-   sniff(filter="ip", prn=handle)
+   print("Scapy version OK. Sniffing on", IFACE)
+   print("conf.iface =", conf.iface)
+   sniff(iface=IFACE, filter="udp", prn=handle, store=False)
+   #sniff(iface=IFACE, prn=handle, store=False)
+
    ```
    (3) Open hosts' terminals. In the mininet terminal:
    ```
@@ -154,3 +162,4 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
    ```
    Question: Did the `h2` receive anything? Why? How do you verify whether `h1` has sent packets successfully?
    (6) Make `h2` receive packets from `h1` successfully
+   Refer to [OpenDaylight Flow Examples](https://docs.opendaylight.org/projects/openflowplugin/en/latest/users/flow-examples.html)
