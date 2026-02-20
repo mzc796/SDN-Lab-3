@@ -25,7 +25,7 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
    ```
 2. Open another terminal, start Mininet. :
    ```
-   sudo mn --custom ~/custom_mn/topo-2sw-2host.py --topo mytopo --switch ovsk,protocols=OpenFlow13 --controller remote,ip=127.0.0.1,port=6653
+   sudo run_mn.sh
    ```
 3. Open the 3rd terminal to request nodes to verify the connection:
    ```
