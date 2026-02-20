@@ -29,8 +29,8 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
    ```
 3. Open the 3rd terminal to request nodes to verify the connection:
    ```
-   mkdir data
    cd odl/
+   mkdir data
    sudo ./req_nodes.sh
    ```
    Read the file `data/nodes.json`. If it has statistics, the connection is successful.
