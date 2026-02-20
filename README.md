@@ -31,7 +31,7 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
    ```
    mkdir data
    cd odl/
-   sudo ./read_nodes.sh
+   sudo ./req_nodes.sh
    ```
    Read the file `data/nodes.json`. If it has statistics, the connection is successful.
    
@@ -50,7 +50,7 @@ Installation Disc: [ubuntu-22.04.4-desktop-amd64.iso](https://old-releases.ubunt
    (2) Request the config data store on the OpenDaylight. On a terminal:
    ```
    cd odl/
-   sudo ./read_config_flows.sh $SW_ID
+   sudo ./req_config_flows.sh $SW_ID
    vim data/$SW_ID_config_flows.json
    ```
    If the json file has content as expected, the flow entry is configured successfully.
