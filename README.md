@@ -1,7 +1,28 @@
 # SDN-Lab-3
-Configure flow entries via OpenDaylight northbound interface
 
-Continue with SDN-Lab-2, now let's configure flow entries via the OpenDaylight northbound interface 
+This lab uses OpenDaylight (Eclipse Public License) and Mininet for SDN experimentation.
+This repository contains original lab instructions and scripts for educational use.
+
+Continue with SDN-Lab-2, now let's configure flow entries via the OpenDaylight northbound interface.
+
+## Learning Objectives
+
+By the end of this lab, students will be able to:
+
+* Configure OpenFlow rules using OpenDaylight’s northbound REST API.
+
+* Understand the difference between config and operational (non-config) datastores.
+
+* Verify flow installation via both controller API and switch flow tables.
+
+* Manually construct flow entries for ARP and ICMP traffic.
+
+* Explain why ARP rules must be installed before ICMP rules.
+
+* Understand controller restart behavior and flow persistence.
+
+* Analyze the relationship between controller state and switch state.
+
 ## Virtual Machine Summary
 Memory: >= 8GB
 
